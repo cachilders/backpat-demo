@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import Dependency from '../dependency/Dependency';
 
-export default class Backpat extends React.Component {
+export default class Dependencies extends React.Component {
   constructor() {
     super();
 
@@ -18,13 +19,16 @@ export default class Backpat extends React.Component {
 
 
   render() {
+    const deps = this.state.dependencies;
     return (
       <div>
         {
-          this.state.dependencies ?
-            Object.keys(this.state.dependencies).map(dep => <p>{dep}</p>)
+          deps ?
+            <ul className="ul-deps">
+              {Object.keys(deps).map(dep => <Dependency dep={deps[dep]} />)}
+            </ul>
           :
-            <p>Loading the dependencies for this app...</p>
+            <p>loading...</p>
         }
       </div>
     );

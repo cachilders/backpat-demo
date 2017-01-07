@@ -1,9 +1,17 @@
 const express = require('express');
-const app = express();
 const backpat = require('backpat').backpat;
+
+const deps = express();
+
+deps.get('/', (req, res) => {
+  backpat().then(res.send.bind(res));
+});
+
+const app = express();
 
 app.use(express.static('./'));
 app.use(express.static('dist'));
+app.use('/deps', deps);
 
 app.get('/favicon.ico', (req, res) => {
   res.sendFile(`${__dirname}/favicon.ico`);

@@ -6,28 +6,26 @@ export default class Backpat extends React.Component {
     super();
 
     this.state = {
-      dependencies: 'this exists',
+      dependencies: [],
     };
   }
 
-  conponentDidMount() {
-    axios.get('/backpat')
-    .then(res => {
-      const dependencies = res.data;
-      this.setState({ dependencies });
+  componentDidMount() {
+    axios.get('/deps').then(res => {
+      this.setState({ dependencies: res.data });
     });
   }
+
 
   render() {
     return (
       <div>
-        {this.state.dependencies} Taco
-        {/*
-          dependencies ?
-            <p>Loading the dependencies for this app...</p>
+        {
+          this.state.dependencies ?
+            Object.keys(this.state.dependencies).map(dep => <p>{dep}</p>)
           :
-            <pre>{dependencies}</pre>
-        */}
+            <p>Loading the dependencies for this app...</p>
+        }
       </div>
     );
   }

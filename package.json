@@ -1,7 +1,7 @@
 {
-  "name": "express-react-redux-starter",
-  "version": "1.0.0",
-  "description": "Starter for Express, React, Redux, SCSS applications",
+  "name": "backpat-demo",
+  "version": "0.6.1",
+  "description": "A demonstration app for the Backpat module",
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack/webpack-dev.config.js --watch --colors",
     "build": "rm -rf dist && webpack --config ./webpack/webpack-prod.config.js --colors",
@@ -11,24 +11,13 @@
     "lint": "eslint src test webpack"
   },
   "keywords": [
-    "ExpressJS",
-    "ReactJS",
-    "Redux",
-    "React hot loader",
-    "React Router",
-    "SCSS",
-    "Webpack Devevelopment configuration",
-    "Webpack Production configuration",
-    "Airbnb Eslint",
-    "pm2",
-    "mocha",
-    "chai"
+    "Backpat"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DimitriMikadze/express-react-redux-starter"
+    "url": "git+https://github.com/cachilders/backpat-demo.git"
   },
-  "author": "Dimitri Mikadze",
+  "author": "Casey A. Childers",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.8.0",
@@ -59,7 +48,10 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "axios": "^0.15.3",
+    "backpat": "^0.6.1",
     "express": "^4.13.4",
+    "file-loader": "^0.9.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",

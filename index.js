@@ -11,6 +11,8 @@ const app = express();
 
 app.use(express.static('./'));
 app.use(express.static('dist'));
+app.use(express.static('static'));
+app.use('/images', express.static('static/images'));
 app.use('/deps', deps);
 
 app.get('/favicon.ico', (req, res) => {

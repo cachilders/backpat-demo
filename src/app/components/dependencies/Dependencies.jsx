@@ -23,12 +23,12 @@ export default class Dependencies extends React.Component {
     return (
       <div>
         {
-          deps ?
-            <ul className="ul-deps">
-              {Object.keys(deps).map(dep => <Dependency dep={deps[dep]} />)}
-            </ul>
+          deps.node ?
+            Object.keys(deps)
+            .sort((a, b) => deps[a].downloads < deps[b].downloads ? 1 : -1)
+            .map(dep => <Dependency dep={deps[dep]} />)
           :
-            <p>loading...</p>
+            <p><img src="images/spinner.gif" alt="data loading spinner" /></p>
         }
       </div>
     );

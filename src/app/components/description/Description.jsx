@@ -54,6 +54,10 @@ export default class Description extends React.Component {
           That’s it. <a href="https://github.com/cachilders/backpat" alt="Backpat's GitHub repo">
           Feel free to submit an issue or PR</a>.
         </p>
+        <p>
+          Oh, also here's the source for <a href="https://github.com/cachilders/backpat-demo">
+          this demo site</a>. Please take a peak, kick the tires, and tune at will.
+        </p>
       </div>
     );
   }

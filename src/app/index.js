@@ -17,7 +17,7 @@ const store = createStoreWithMiddleware(reducers);
 ReactDOM.render(
   <Provider store={store}>
     <Router onUpdate={() => window.scrollTo(0, 0)} history={browserHistory}>
-      <Route path="/">
+      <Route path="/" component={App}>
         <IndexRoute component={Home} />;
         {/*<Route path="/about" component={About} />*/}
       </Route>

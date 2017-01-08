@@ -1,12 +1,9 @@
 import React, { PropTypes } from 'react';
-import Header from './common/Header';
+import { Container } from 'semantic-ui-react';
 
 function App({ children }) {
   return (
-    <div className="container">
-      <Header />
-      {children}
-    </div>
+    <Container fluid children={children} />
   );
 }
 

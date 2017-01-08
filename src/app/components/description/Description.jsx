@@ -29,7 +29,7 @@ export default class Description extends React.Component {
         <p>Require it like so:</p>
         <pre>
           <code className="language-javascript">
-            <span className="hljs-keyword">const</span> backpat = <span className="hljs-built_in">require</span>(<span className="hljs-string">'backpat'</span>).backpat;
+            const backpat = require('backpat').backpat;
           </code>
         </pre>
         <p>
@@ -37,7 +37,7 @@ export default class Description extends React.Component {
         </p>
         <pre>
           <code className="language-javascript">
-            backpat().then(<span className="hljs-string">'do stuff with it here'</span>);
+            backpat().then('do stuff with it here');
           </code>
         </pre>
         <p>
@@ -46,6 +46,22 @@ export default class Description extends React.Component {
           get back is a promise</strong> that will eventually resolve into an object containing
           a handful of choice properties.
         </p>
+        <pre>
+          <code className="language-javascript">
+            <div>{'{'} eslint:</div>
+            <div>  {'{'} version: '3.8.1',</div>
+            <div>    name: 'eslint',</div>
+            <div>    url: 'https://github.com/eslint/eslint.git',</div>
+            <div>    description: 'An AST-based pattern checker for JavaScript.',</div>
+            <div>    downloads: 4038383 {'}'},</div>
+            <div>  mocha:</div>
+            <div>  {'{'} version: '3.1.2',</div>
+            <div>    name: 'mocha',</div>
+            <div>    url: 'https://github.com/mochajs/mocha.git',</div>
+            <div>    description: 'simple, flexible, fun test framework',</div>
+            <div>    downloads: 4001598 {'}}'}</div>
+          </code>
+        </pre>
         <p>
           Simple as that. The npm download count attribute makes ranking and filtering the
           results a snap.

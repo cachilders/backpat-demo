@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Dependencies from '../dependencies/Dependencies';
 import Description from '../description/Description';
 import { Container, Grid } from 'semantic-ui-react';
 
-function Home() {
+function Home(props) {
   return (
     <Container fluid>
       <Grid padded>
@@ -11,11 +11,15 @@ function Home() {
           <Description />
         </Grid.Column>
         <Grid.Column mobile={16} tablet={16} computer={8}>
-          <Dependencies />
+          <Dependencies dependencies={props.list} />
         </Grid.Column>
       </Grid>
     </Container>
   );
 }
+
+Home.propTypes = {
+  list: PropTypes.object.isRequired,
+};
 
 export default Home;

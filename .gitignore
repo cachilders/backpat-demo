@@ -48,3 +48,6 @@ jspm_packages
 
 # VS Code
 .vscode
+
+# Codekit
+config.codekit3

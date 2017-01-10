@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { hydrateDependencies } from '../actions/index.js';
 import { Container } from 'semantic-ui-react';
+import { hydrateDependencies } from '../actions/index.js';
 
 class App extends Component {
-
   componentWillMount() {
     const { dispatch } = this.props;
     dispatch(hydrateDependencies());

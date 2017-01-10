@@ -18,7 +18,9 @@ function Dependencies({ list }) {
             <List>
               {
                 Object.keys(list)
-                  .sort((a, b) => list[a].downloads < list[b].downloads ? 1 : -1)
+                  .sort(
+                    (a, b) => list[a].downloads < list[b].downloads ? 1 : -1
+                  )
                   .map(dep => <Dependency key={list[dep].name} {...list[dep]} />)
               }
             </List>

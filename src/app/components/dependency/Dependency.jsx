@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { List, Icon } from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
 
 function Dependency({ name, url, version, description }) {
   return (

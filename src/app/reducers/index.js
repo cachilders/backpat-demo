@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import { REQUEST_DEPENDENCIES, RECEIVE_DEPENDENCIES } from '../actions/index';
 
-function dependencies(state = {
+const initialState = {
   fetching: false,
   list: {},
-}, action) {
+};
+
+function dependencies(state = initialState, action) {
   switch (action.type) {
     case REQUEST_DEPENDENCIES:
       return Object.assign({}, state, {

@@ -1,18 +1,22 @@
 import React, { PropTypes } from 'react';
 
-function Dependency({ dep }) {
+function Dependency({ name, url, version, description, downloads }) {
   return (
     <div>
-      <a className="subheader" href={dep.url} alt={dep.name}>
-        {dep.name} (v {dep.version})
+      <a className="subheader" href={url} alt={name}>
+        {name} (v {version})
       </a>
-      <div className="depDesc">{dep.description}</div>
+      <div className="depDesc">{description}</div>
     </div>
   );
 }
 
 Dependency.propTypes = {
-  dep: PropTypes.object.isRequired,
+  name: PropTypes.string,
+  url: PropTypes.string,
+  version: PropTypes.string,
+  description: PropTypes.string,
+  downloads: PropTypes.number,
 };
 
 export default Dependency;

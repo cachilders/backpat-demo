@@ -11,15 +11,11 @@ function Home(props) {
           <Description />
         </Grid.Column>
         <Grid.Column mobile={16} tablet={16} computer={8}>
-          <Dependencies dependencies={props.list} />
+          <Dependencies {...props} />
         </Grid.Column>
       </Grid>
     </Container>
   );
 }
-
-Home.propTypes = {
-  list: PropTypes.object.isRequired,
-};
 
 export default Home;

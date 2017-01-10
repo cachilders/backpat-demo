@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react';
 import { Icon, Message } from 'semantic-ui-react';
 import Dependency from '../dependency/Dependency';
 
-function Dependencies({ dependencies }) {
+function Dependencies({ list }) {
   return (
     <div>
       {
-        dependencies.node ?
+        list.node ?
           <div>
             <Message icon>
               <Icon name="pointing down" />
@@ -15,9 +15,9 @@ function Dependencies({ dependencies }) {
                 Here's an example of Backpat in use on this very page
               </Message.Content>
             </Message>
-            {Object.keys(dependencies)
-            .sort((a, b) => dependencies[a].downloads < dependencies[b].downloads ? 1 : -1)
-            .map(dep => <Dependency key={dependencies[dep].name} dep={dependencies[dep]} />)}
+            {Object.keys(list)
+            .sort((a, b) => list[a].downloads < list[b].downloads ? 1 : -1)
+            .map(dep => <Dependency key={list[dep].name} {...list[dep]} />)}
           </div>
         :
           <Message icon>
@@ -33,7 +33,7 @@ function Dependencies({ dependencies }) {
 }
 
 Dependencies.propTypes = {
-  dependencies: PropTypes.object.isRequired,
+  list: PropTypes.object,
 };
 
 export default Dependencies;

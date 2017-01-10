@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import { Icon, Message } from 'semantic-ui-react';
+import { List, Icon, Message } from 'semantic-ui-react';
 import Dependency from '../dependency/Dependency';
 
 function Dependencies({ list }) {
@@ -15,9 +15,13 @@ function Dependencies({ list }) {
                 Here's an example of Backpat in use on this very page
               </Message.Content>
             </Message>
-            {Object.keys(list)
-            .sort((a, b) => list[a].downloads < list[b].downloads ? 1 : -1)
-            .map(dep => <Dependency key={list[dep].name} {...list[dep]} />)}
+            <List>
+              {
+                Object.keys(list)
+                  .sort((a, b) => list[a].downloads < list[b].downloads ? 1 : -1)
+                  .map(dep => <Dependency key={list[dep].name} {...list[dep]} />)
+              }
+            </List>
           </div>
         :
           <Message icon>

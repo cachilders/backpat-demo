@@ -1,13 +1,16 @@
 import React, { PropTypes } from 'react';
+import { List, Icon } from 'semantic-ui-react';
 
-function Dependency({ name, url, version, description, downloads }) {
+function Dependency({ name, url, version, description }) {
   return (
-    <div>
+    <List.Item>
       <a className="subheader" href={url} alt={name}>
         {name} (v {version})
       </a>
-      <div className="depDesc">{description}</div>
-    </div>
+      <div className="depDesc">
+        {description}<br />
+      </div>
+    </List.Item>
   );
 }
 

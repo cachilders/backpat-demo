@@ -1,6 +1,6 @@
 {
   "name": "backpat-demo",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "A demonstration app for the Backpat node module",
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack/webpack-dev.config.js --watch --colors",

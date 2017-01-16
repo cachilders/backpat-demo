@@ -1,16 +1,21 @@
 import React, { PropTypes } from 'react';
-import { List } from 'semantic-ui-react';
+import { Comment } from 'semantic-ui-react';
 
 function Dependency({ name, url, version, description }) {
   return (
-    <List.Item>
-      <a className="subheader" href={url} alt={name}>
-        {name} (v {version})
-      </a>
-      <div className="depDesc">
-        {description}<br />
-      </div>
-    </List.Item>
+    <Comment>
+      <Comment.Content>
+        <Comment.Author as="a" href={url} alt={name}>
+          {name}
+        </Comment.Author>
+        <Comment.Metadata>
+          <span>v{version}</span>
+        </Comment.Metadata>
+        <Comment.Text>
+          <p>{description}</p>
+        </Comment.Text>
+      </Comment.Content>
+    </Comment>
   );
 }
 

@@ -46,7 +46,7 @@
     "sass-loader": "^5.0.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.14.0",
+    "webpack": "^2.3.0",
     "webpack-dev-server": "^2.2.1"
   },
   "dependencies": {

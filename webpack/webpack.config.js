@@ -8,23 +8,23 @@ module.exports = (options) => {
 
   const webpackConfig = {
     devtool: options.devtool,
-    entry: [
+    entry: {
+      main: [
       `webpack-dev-server/client?http://localhost:${+ options.port}`,
-      'webpack/hot/dev-server',
-      Path.join(__dirname, '../src/app/index'),
-    ],
+      Path.join(__dirname, '../src/app/index')]
+    },
     output: {
-      path: Path.join(__dirname, '../dist'),
-      filename: `/scripts/${options.jsFileName}`,
+      path: Path.join(__dirname, '../dist/'),
+      filename: `scripts/${options.jsFileName}`,
     },
     resolve: {
-      extensions: ['', '.js', '.jsx'],
+      extensions: ['.js', '.jsx'],
     },
     module: {
       loaders: [{
         test: /.jsx?$/,
         include: Path.join(__dirname, '../src/app'),
-        loader: 'babel',
+        loader: 'babel-loader',
       }],
     },
     plugins: [
@@ -43,7 +43,7 @@ module.exports = (options) => {
     webpackConfig.entry = [Path.join(__dirname, '../src/app/index')];
 
     webpackConfig.plugins.push(
-      new Webpack.optimize.OccurenceOrderPlugin(),
+      new Webpack.optimize.OccurrenceOrderPlugin(),
       new Webpack.optimize.UglifyJsPlugin({
         compressor: {
           warnings: false,
@@ -54,7 +54,7 @@ module.exports = (options) => {
 
     webpackConfig.module.loaders.push({
       test: /\.scss$/,
-      loader: ExtractSASS.extract(['css', 'sass']),
+      loader: ExtractSASS.extract(['css-loader', 'sass-loader']),
     });
   } else {
     webpackConfig.plugins.push(
@@ -63,7 +63,7 @@ module.exports = (options) => {
 
     webpackConfig.module.loaders.push({
       test: /\.scss$/,
-      loaders: ['style', 'css', 'sass'],
+      loaders: ['style-loader', 'css-loader', 'sass-loader'],
     });
 
     webpackConfig.devServer = {
@@ -71,7 +71,6 @@ module.exports = (options) => {
       hot: true,
       port: options.port,
       inline: true,
-      progress: true,
       historyApiFallback: true,
     };
   }

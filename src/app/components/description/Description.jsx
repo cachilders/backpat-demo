@@ -71,7 +71,7 @@ function Description() {
       </p>
       <p>
         Oh, also here's the source for <a href="https://github.com/cachilders/backpat-demo">
-        this demo site</a>. Please take a peak, kick the tires, and tune at will.
+        this demo site</a>. Please take a peek, kick the tires, and tune at will.
       </p>
     </div>
   );

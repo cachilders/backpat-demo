@@ -4,9 +4,14 @@ import { PropTypes } from 'prop-types';
 function Dependency({ dep }) {
   return (
     <div>
-      <a className="subheader" href={dep.url} alt={dep.name}>
-        {dep.name} (v {dep.version})
-      </a>
+      {
+        dep.url ?
+          <a className="subheader" href={dep.url} alt={dep.name}>
+            {dep.name} (v {dep.version})
+          </a>
+        :
+          <span className="subheader">{dep.name} (v {dep.version})</span>
+      }
       <div className="depDesc">{dep.description}</div>
     </div>
   );

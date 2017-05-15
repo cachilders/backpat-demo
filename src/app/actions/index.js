@@ -17,10 +17,10 @@ function receiveDependencies(dependencies) {
 }
 
 function fetchDependencies() {
-  return dispatch => {
+  return (dispatch) => {
     dispatch(requestDependencies());
     axios.get('/deps').then(res => res.data)
-    .then((list) => dispatch(receiveDependencies(list)));
+    .then(list => dispatch(receiveDependencies(list)));
   };
 }
 
@@ -36,5 +36,6 @@ export function hydrateDependencies() {
     if (shouldFetchDependencies(getState())) {
       return dispatch(fetchDependencies());
     }
+    return null;
   };
 }

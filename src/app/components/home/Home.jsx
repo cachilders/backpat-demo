@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { PropTypes } from 'prop-types';
 import Dependencies from '../dependencies/Dependencies';
 import Description from '../description/Description';
 import { Container, Grid } from 'semantic-ui-react';

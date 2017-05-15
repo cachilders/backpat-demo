@@ -10,8 +10,9 @@ module.exports = (options) => {
     devtool: options.devtool,
     entry: {
       main: [
-      `webpack-dev-server/client?http://localhost:${+ options.port}`,
-      Path.join(__dirname, '../src/app/index')]
+        `webpack-dev-server/client?http://localhost:${+options.port}`,
+        Path.join(__dirname, '../src/app/index'),
+      ],
     },
     output: {
       path: Path.join(__dirname, '../dist/'),

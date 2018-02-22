@@ -43,7 +43,7 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-1": "^6.5.0",
     "backpat": "^0.7.0",
-    "css-loader": "^0.28.1",
+    "css-loader": "^0.28.10",
     "express": "^4.14.0",
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.1",

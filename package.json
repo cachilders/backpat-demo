@@ -61,7 +61,7 @@
     "semantic-ui-react": "^0.68.3",
     "style-loader": "^0.17.0",
     "url-loader": "^0.5.7",
-    "webpack": "^2.5.1",
+    "webpack": "^4.35.0",
     "webpack-dev-server": "^2.4.5"
   }
 }
